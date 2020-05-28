@@ -1,0 +1,280 @@
+/* 头部 */
+body, html{
+  height: 100%;
+}
+#app{
+  height: 100%;
+  overflow-y: scroll;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background: #fff;
+}
+.header .logo{
+  margin-left: 18px;
+
+}
+.header .search-input{
+  display: flex;
+  width: 132px;
+  height: 24px;
+  font-size: 10px;
+  color: #999;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  align-items: center;
+}
+.header .search-input svg{
+  margin-left: 10px;
+}
+.header .search-input span{
+  width: 92px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.header .avatar svg{
+border-radius: 50%;
+}
+.header .download-app{
+  width: 78px;
+  height: 23px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 12px;
+  line-height: 23px;
+  text-align: center;
+  color: #fff;
+  background-color: #fb7299;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+ /* 当前导航栏  */
+.nav-box{
+  /* display: none; */
+  position: fixed;
+  left: -3px;
+  right: 13px;
+  top: 54px;
+  z-index: 1;
+  background-color: #fff;
+}
+.nav-box .nav-list{
+white-space: nowrap;
+padding-left: 24px;
+width: 85%;
+overflow-x: scroll;
+
+}
+.nav-box .nav-list::-webkit-scrollbar{
+  display: none;
+}
+.nav-box .nav{
+  display: inline-block;
+height: 30px;
+line-height: 28px;
+margin-right: 40px;
+color:#757575;
+font-size: 14px;   
+border-bottom:2px solid transparent; 
+}
+.nav-box .active{
+  border-color:#fb7299 ;
+  color: #fb7299;
+}
+.nav-box .down{
+  position: absolute;
+  top:0px;
+  right: 4px;
+}
+
+/* 下拉导航栏 */
+.hide-nav-box{
+  position: fixed;
+  z-index: 3;
+  top:54px;
+  left: 0;
+  right: 0;
+  padding-bottom: 20px;
+  transition: top 0.3s;
+  background-color: #fff;
+
+}
+
+.hide-nav-box .nav{
+  display: inline-block;
+  width: 32px;
+  margin-left: 14px;
+  margin-right: 14px;
+  font-size: 14px;
+  text-align: center;
+  color: #757575;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+.hide{
+  top: -120px;
+
+}
+.hide-nav-box .nav.big {
+  width: 46px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+.hide-nav-box .nav.active {
+  border-color: #fb7299;
+  color: #fb7299;
+}
+.hide-nav-box  .up{
+  position: absolute;
+  bottom: 0;
+  left: 50%; 
+  margin-left: -12px;
+}
+
+/* 轮播图 */
+.banner-box{
+  position: relative;
+  top:90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  height: 110px;
+  border-radius: 7px;
+  overflow: hidden;
+
+}
+.banner-box .banner-list{
+  position: absolute;
+  width: cal(3 * 350px);
+  transition: left .3s;
+
+}
+
+.banner-box .banner {
+  float: left;
+  width: 350px;
+  height: 110px;
+}
+
+.banner-box .poster {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-box .index-list {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  height: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 5px;
+}
+
+.banner-box .index {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-left: 3px;
+  margin-right: 3px;
+  background-color: #fff;
+}
+
+.banner-box .index.active {
+  background-color: #fb7299;
+}
+
+/* 主题视频区 */
+.video-box{
+  padding-top: 100px;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+.video-box .video-list::after{
+  display: block;
+  content: '';
+  clear: both;
+}
+.video-box .video{
+  width: 50%;
+  float: left;
+  margin-bottom: 10px;
+}
+.video-box .poster{
+  position: relative;
+  height: 106px;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 6px;
+  overflow: hidden;
+
+}
+.video-box .poster img{
+  width: 100%;
+  height: 100%;
+}
+.video-box .poster .info{
+  position: absolute;
+  bottom: 0;
+  color:#fff;
+  left: 0;
+  right: 0;
+  padding:8px 10px 3px;
+  font-size: 12px;
+  background-image: linear-gradient(rgba(33,33,33,0),rgba(33,33,33,0.3));
+
+}
+.video-box .poster .info svg{
+  width:14px ;
+  height:14px ;
+  fill:#fff;
+
+}
+.video-box .poster .info div{
+  display: inline-flex;
+  align-items: center;
+  margin-right: 15px;
+}
+.video-box .poster .info  .rank{
+  position: absolute;
+  right: 15px;
+}
+.video-box .title{
+  font-size: 12px;
+  margin: 6px 6px 10px 6px;
+  height: 38px;
+  line-height: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  
+}
+
+/* 底部 区域 */
+.footer {
+  margin-top: 40px;
+}
+
+.footer p {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+}
